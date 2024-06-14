@@ -1,15 +1,17 @@
+
 {
-    "name": "my-portfolio",
-    "version": "0.0.0",
-    "private": true,
-    "scripts": {
-        "start": "node ./bin/www"
-    },
-    "dependencies": {
-        "cookie-parser": "^1.4.6",
-        "debug": "~2.6.9",
-        "express": "~4.17.1",
-        "hbs": "~4.1.2",
-        "morgan": "~1.9.1"
-    }
+  "name": "portfolio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "pug": "^3.0.2",
+    "morgan": "~1.9.1"
+  }
 }

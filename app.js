@@ -8,37 +8,9 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-app.engine('handlebars', exphbs.engine({
-    defaultLayout: 'main',
-    layoutsDir: path.join(__dirname, 'views', 'layouts'),
-    partialsDir: path.join(__dirname, 'views', 'partials')
-}));
-app.set('view engine', 'handlebars');
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
-
-app.get('/', (req, res) => {
-    res.render('home', { title: 'Home' });
-});
-
-app.get('/about', (req, res) => {
-    res.render('about', { title: 'About Me' });
-});
-
-app.get('/resume', (req, res) => {
-    res.render('resume', { title: 'Resume' });
-});
-
-app.get('/projects', (req, res) => {
-    res.render('projects', { title: 'Projects' });
-});
-
-app.get('/contact', (req, res) => {
-    res.render('contact', { title: 'Contact Information' });
-});
-
-app.get('/skills', (req, res) => {
-    res.render('skills', { title: 'Skills and Achievements' });
-});
+app.set('view engine', 'hbs'); // Setting Handlebars as the view engine
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -66,7 +38,7 @@ app.use(function(err, req, res, next) {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${3000}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 module.exports = app;

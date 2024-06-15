@@ -8,11 +8,13 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-// view engine setup
-
-app.set('view engine', 'hbs');
+app.engine('handlebars', exphbs.engine({
+    defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, 'views', 'layouts'),
+    partialsDir: path.join(__dirname, 'views', 'partials')
+}));
+app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
-
 
 app.get('/', (req, res) => {
     res.render('home', { title: 'Home' });
